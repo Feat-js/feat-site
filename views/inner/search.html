@@ -13,15 +13,27 @@
 </label>
 
 <div id="page_holder" class="mt-2">
-    <Foreach in="pages" as="page">
-        <div onclick="window.location.href='/{{ page }}'">
-            <p>
-                <strong>
-                    {{ page }}
-                </strong>
-            </p>
-        </div>
-    </Foreach>
+
+    <if condition="{{ has_result }}">
+        <p>
+            <strong>
+                Found {{ pages.length }} page matching your search!
+            </strong>
+        </p>
+    </if>
+    <ul class="mdc-list">
+        <Foreach in="pages" as="page">
+            <li class="mdc-list-item" onclick="window.location.href='/{{ page }}'">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text"><i class="fas fa-link"></i> {{ page }}</span>
+            </li>
+        </Foreach>
+    </ul>
+
+    <if condition="{{ !has_result }}">
+        <p>No results were found matching "{{ query }}"!</p>
+    </if>
+
 </div>
 
 <script>

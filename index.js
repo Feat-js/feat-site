@@ -28,7 +28,8 @@ app.get('/search', (req, res) => {
         inner: `views/inner/index.html`,
         is_search: true,
         pages: result,
-        query: q ? q : ""
+        query: q ? q : "",
+        has_result: result.length > 0
     });
 });
 
