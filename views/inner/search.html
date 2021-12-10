@@ -1,0 +1,31 @@
+<label for=""><strong>Search Pages</strong></label>
+<br>
+<button class="mdc-button mdc-button--outlined" onclick="handleSearch()" ripple-btn">
+    <div class="mdc-button__ripple"></div>
+    <span class="mdc-button__label"><span class="material-icons mdc-fab__icon">search</span></span>
+</button>
+<label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+    <span class="mdc-notched-outline">
+      <span class="mdc-notched-outline__leading"></span>
+      <span class="mdc-notched-outline__trailing"></span>
+    </span>
+    <input class="mdc-text-field__input" value="{{ query }}" id="searchterms" type="text" aria-label="Label">
+</label>
+
+<div id="page_holder" class="mt-2">
+    <Foreach in="pages" as="page">
+        <div onclick="window.location.href='/{{ page }}'">
+            <p>
+                <strong>
+                    {{ page }}
+                </strong>
+            </p>
+        </div>
+    </Foreach>
+</div>
+
+<script>
+    function handleSearch(){
+        return window.location.href = `/search?q=${Feat.getElement("#searchterms").value}`
+    }
+</script>

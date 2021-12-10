@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Google Sans", sans-serif !important;
+}
+
+.mdc-fab--extended.fixed {
+    position: fixed;
+    bottom: 50px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+footer.footer_ {
+    position: fixed;
+    bottom: 10px;
+    transform: translateX(-50%);
+    left: 50%;
+}
