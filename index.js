@@ -2,6 +2,7 @@ const Express = require('express');
 const app = new Express();
 const FeatJS = require('feat.js');
 const feat = new FeatJS(app);
+const config = require('./config.json');
 
 app.use(Express.static('public'));
 let pages = ["docs"];
@@ -44,4 +45,4 @@ app.get('/:id', (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log(`App online on port 3000`));
+app.listen(config["port"], () => console.log(`App online on port 3000`));
