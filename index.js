@@ -5,7 +5,7 @@ const feat = new FeatJS(app);
 const config = require('./config.json');
 
 app.use(Express.static('public'));
-let pages = ["docs"];
+let pages = ["docs", "frontend", "support"];
 
 
 
@@ -33,15 +33,17 @@ app.get('/search', (req, res) => {
     });
 });
 
+app.get('/gh', (req, res) => res.redirect('//github.com/feat-js/feat'));
+
 app.get('/:id', (req, res) => {
-    if(!pages[req.params.id]) return res.render('/views/index', { 
+    if(!pages.includes(req.params.id)) return res.render('/views/index', { 
         inner: `views/inner/error.html`,
         type: '404',
         is_search: false
     });
 
     return res.render('/views/index', { 
-        inner: req.params.id,
+        inner: `views/inner/${req.params.id}.html`,
         is_search: false
     });
 });

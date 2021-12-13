@@ -37,7 +37,7 @@ module.exports = {
                 </h1>
                 <p>${attributes.subtitle ? attributes.subtitle : "The Feat.JS Framework; Easy, powerful and fast."}</p>
 
-                <a href="//github.com/Feat-JS/feat" class="mdc-button mdc-button--outlined">
+                <a href="/gh" class="mdc-button mdc-button--outlined">
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label"><i class="fab fa-github"></i> Github</span>
                 </a>
