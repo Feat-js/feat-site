@@ -46,12 +46,6 @@ module.exports = {
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label"><i class="fab fa-npm"></i> NPM</span>
                 </a>
-
-                <a href="/search" class="mdc-fab mdc-fab--extended fixed">
-                    <div class="mdc-fab__ripple"></div>
-                    <span class="material-icons mdc-fab__icon">search</span>
-                    <span class="mdc-fab__label">Search</span>
-                </a>
                 <hr/>
                 ${content}
             </div>
